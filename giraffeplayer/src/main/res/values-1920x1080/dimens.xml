@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="px13">13.0px</dimen>
+    <dimen name="px24">24.0px</dimen>
+    <dimen name="px25">25.0px</dimen>
+    <dimen name="px60">60.0px</dimen>
+    <dimen name="px120">120.0px</dimen>
+    <dimen name="px160">160.0px</dimen>
+</resources>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ppfuns.filemanager.view.ItemContainerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/px300"
+    android:layout_height="wrap_content"
+    android:focusable="false"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="@dimen/px36">
+
+    <ImageView
+        android:id="@+id/iv_dev"
+        android:layout_width="@dimen/px150"
+        android:layout_height="@dimen/px150"
+        android:layout_margin="2dp"
+        android:background="@drawable/sel_rcyview_item"
+        android:clickable="true"
+        android:layout_centerHorizontal="true"
+        android:focusable="true"
+        android:src="@drawable/icon_dev"/>
+
+    <com.ppfuns.filemanager.view.MarqueeTextView
+        android:id="@+id/tv_dev"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/iv_dev"
+        android:layout_centerHorizontal="true"
+        android:singleLine="true"
+        android:ellipsize="marquee"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px36"/>
+
+</com.ppfuns.filemanager.view.ItemContainerLayout>

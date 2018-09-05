@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_browser"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    tools:context="com.ppfuns.filemanager.ui.activity.VideoDirActivity">
+
+    <ImageView
+        android:id="@+id/iv_title"
+        style="@style/TitleStyle"
+        android:src="@drawable/mulu_icon"/>
+
+    <TextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px70"
+        android:layout_alignBottom="@id/iv_title"
+        android:layout_marginBottom="@dimen/px12"
+        android:layout_marginLeft="@dimen/px12"
+        android:layout_toRightOf="@id/iv_title"
+        android:background="@drawable/path_bj"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/px10"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px35"
+        android:visibility="invisible"/>
+
+    <include layout="@layout/center_tip"/>
+
+    <com.ppfuns.filemanager.view.AutoFocusRecyclerView
+        android:id="@+id/recy_file"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/px120"
+        android:layout_marginLeft="@dimen/px96"
+        android:layout_marginRight="@dimen/px32"
+        android:layout_marginTop="@dimen/px230"
+        android:focusable="true"/>
+
+</RelativeLayout>

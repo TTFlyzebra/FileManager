@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#ffffff</color>
+    <color name="color_sb_loading_download">#7F000000</color>
+
+    <color name="burlywood">#DEB887</color><!--实木色 -->
+
+    <color name="darkseagreen">#8FBC8F</color><!--暗海兰色 -->
+</resources>

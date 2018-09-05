@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_image"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ppfuns.filemanager.ui.activity.ImageDirActivity">
+
+    <ImageView
+        style="@style/TitleStyle"
+        android:src="@drawable/pic_icon"/>
+
+    <include layout="@layout/tip_lay"/>
+
+    <include layout="@layout/center_tip"/>
+
+    <com.ppfuns.filemanager.view.AutoFocusRecyclerView
+        android:id="@+id/recy_pic"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/px120"
+        android:layout_marginRight="@dimen/px32"
+        android:layout_marginLeft="@dimen/px100"
+        android:layout_marginTop="@dimen/px230"/>
+
+</RelativeLayout>

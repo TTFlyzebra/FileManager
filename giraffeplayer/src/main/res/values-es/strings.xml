@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">GiraffePlayer</string>
+    <string name="giraffe_player_url_empty">Porfavor introduce la direccion de streaming</string>
+</resources>

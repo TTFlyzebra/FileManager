@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/video_player_control_panel_bg"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/px24"
+    android:paddingTop="@dimen/px24">
+
+    <com.ppfuns.filemanager.view.MarqueeTextView
+        android:id="@+id/tv_dialog_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/px12"
+        android:layout_marginLeft="@dimen/px144"
+        android:layout_marginRight="@dimen/px144"
+        android:ellipsize="marquee"
+        android:focusable="false"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="推薦下載"
+        android:textAlignment="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px38"
+        android:visibility="gone"
+        app:enableMarquee="true"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false">
+
+        <ScrollView
+            android:id="@+id/sv_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:focusable="false"
+            android:paddingLeft="@dimen/px36"
+            android:paddingRight="@dimen/px36"
+            android:scrollbars="none"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_dialog_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center_horizontal"
+                android:ellipsize="end"
+                android:focusable="false"
+                android:maxLines="3"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px38"/>
+        </ScrollView>
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/rcv_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:focusable="false"
+            android:paddingLeft="@dimen/px12"
+            android:paddingRight="@dimen/px12"
+            android:scrollbars="none"
+            android:visibility="gone"/>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_btn_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="false"
+        android:gravity="center"
+        android:orientation="horizontal">
+    </LinearLayout>
+</LinearLayout>
+

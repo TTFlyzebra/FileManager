@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="picture">Photo</string>
+    <string name="video">Video</string>
+    <string name="audio">Music</string>
+    <string name="file_tree">Device</string>
+</resources>

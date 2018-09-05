@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_video"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    tools:context="com.ppfuns.filemanager.ui.activity.VideoDirActivity">
+
+    <ImageView
+        style="@style/TitleStyle"
+        android:src="@drawable/video_icon"/>
+
+    <include layout="@layout/tip_lay"/>
+
+    <include layout="@layout/center_tip"/>
+
+    <com.ppfuns.filemanager.view.AutoFocusRecyclerView
+        android:id="@+id/recy_vedio"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/px120"
+        android:layout_marginLeft="@dimen/px96"
+        android:layout_marginRight="@dimen/px32"
+        android:layout_marginTop="@dimen/px230"
+        android:focusable="true"/>
+
+</RelativeLayout>

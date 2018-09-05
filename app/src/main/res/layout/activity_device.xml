@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_all"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.ppfuns.filemanager.ui.activity.DeviceActivity">
+
+    <ImageView
+        android:id="@+id/iv_title"
+        android:layout_width="@dimen/px160"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/px172"
+        android:layout_marginTop="@dimen/px80"
+        android:adjustViewBounds="true"
+        android:focusable="false"
+        android:src="@drawable/mulu_icon"/>
+
+    <include layout="@layout/tip_lay"/>
+
+    <TextView
+        android:layout_width="@dimen/px300"
+        android:layout_height="@dimen/px70"
+        android:layout_marginLeft="@dimen/px355"
+        android:layout_marginTop="@dimen/px70"
+        android:background="@drawable/path_bj"
+        android:focusable="false"
+        android:gravity="center_vertical"
+        android:paddingLeft="@dimen/px10"
+        android:text="我的设备"
+        android:textColor="@color/white"
+        android:textSize="@dimen/px35"
+        android:visibility="gone"/>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recy_devices"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="@dimen/px180"
+        android:layout_marginLeft="@dimen/px48"
+        android:layout_marginRight="@dimen/px48"
+        android:layout_marginTop="@dimen/px240"
+        android:focusable="true"/>
+
+</RelativeLayout>

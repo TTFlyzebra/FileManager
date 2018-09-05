@@ -1,0 +1,155 @@
+apply plugin: 'com.android.application'
+
+def releaseTime() {
+    def time = new Date().format("yyyyMMdd", TimeZone.getTimeZone("GMT+08:00"))
+    println time
+    return time
+}
+
+def getSvnVersion() {
+    def int verCode = 0
+    def versionPropsFile = file("src/main/assets/user_config.properties")
+    if (versionPropsFile.canRead()) {
+
+        Properties versionProps = new Properties()
+        versionProps.load(new FileInputStream(versionPropsFile))
+
+        verCode = versionProps['svn_version'].toInteger()
+    }
+
+    return verCode
+}
+
+def getVerName() {
+    def int svnVersion = getSvnVersion()
+    if (svnVersion == 0) {
+        return "V1.0.0"
+    } else {
+        return svnVersion
+    }
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+
+    sourceSets {
+        main {
+            jniLibs.srcDir("jniLibs")
+            jni.srcDirs = []
+        }
+    }
+
+
+    dexOptions {
+        javaMaxHeapSize "4g"
+    }
+
+    defaultConfig {
+        applicationId "com.ppfuns.filemanager"
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+
+        versionCode getSvnVersion()
+        versionName "1.0" + "." + getVerName() + "." + releaseTime()
+        // Enabling multidex support.
+        multiDexEnabled true
+
+
+    }
+
+    signingConfigs {
+        debug {
+            keyAlias 'android.keystore'
+            keyPassword 'ppfuns123'
+            storeFile file('./sign/android.keystore')
+            storePassword 'ppfuns123'
+        }
+
+        releaseConfig {
+            keyAlias 'android.keystore'
+            keyPassword 'ppfuns123'
+            storeFile file('./sign/android.keystore')
+            storePassword 'ppfuns123'
+        }
+    }
+    buildTypes {
+        debug {
+            buildConfigField "boolean", "LOG_DEBUG", "true"
+
+            minifyEnabled false
+            zipAlignEnabled rootProject.ext.zipAlignEnabled
+            shrinkResources rootProject.ext.zipAlignEnabled
+        }
+
+        release {
+            buildConfigField "boolean", "LOG_DEBUG", "false"
+            minifyEnabled rootProject.ext.proguard
+            zipAlignEnabled rootProject.ext.zipAlignEnabled
+            shrinkResources rootProject.ext.zipAlignEnabled
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.releaseConfig
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/beans.xml'
+    }
+    applicationVariants.all { variant ->
+        variant.outputs.each { output ->
+            def oldFile = output.outputFile
+            if (variant.buildType.name.equals('release')) {
+                def releaseApkName = defaultConfig.applicationId + '_release_' + defaultConfig.versionName + '.apk'
+                output.outputFile = new File(oldFile.parent, releaseApkName)
+            }
+        }
+    }
+}
+
+
+dependencies {
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile 'junit:junit:4.12'
+    compile 'com.android.support:appcompat-v7:23.+'
+    compile files('libs/cling-core-2.1.1.jar')
+    compile files('libs/cling-support-2.1.1.jar')
+    compile files('libs/seamless-http-1.1.1.jar')
+    compile files('libs/seamless-util-1.1.1.jar')
+    compile files('libs/seamless-xml-1.1.1.jar')
+    compile 'com.github.bumptech.glide:glide:3.7.0'
+    compile 'org.eclipse.jetty:jetty-servlet:8.1.8.v20121106'
+    compile 'org.eclipse.jetty:jetty-client:8.1.8.v20121106'
+    compile 'org.eclipse.jetty:jetty-server:8.1.8.v20121106'
+    debugCompile 'com.squareup.leakcanary:leakcanary-android:1.4-beta2'
+    releaseCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    testCompile 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    compile 'com.jakewharton:disklrucache:2.0.2'
+    compile 'com.android.support:recyclerview-v7:23.+'
+    compile 'com.yqritc:recyclerview-flexibledivider:1.4.0'
+    compile 'com.umeng.analytics:analytics:5.6.7'
+    compile files('libs/jcifs-1.3.18.jar')
+    compile project(':giraffeplayer')
+    compile 'com.nanohttpd:nanohttpd-webserver:2.2.0'
+    compile 'com.google.code.gson:gson:2.8.0'
+    compile files('libs/WtfLogger.jar')
+
+    compile group: 'org.jsoup', name: 'jsoup', version: '1.10.1'
+    compile 'io.reactivex:rxandroid:1.2.1'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:adapter-rxjava:2.1.0'
+    compile 'com.android.support:multidex:1.0.0'
+
+    compile 'jp.wasabeef:glide-transformations:2.0.1'
+    compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.3.0'
+}

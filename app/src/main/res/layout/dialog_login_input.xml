@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <EditText
+        android:id="@+id/edt_smb_login_username"
+        android:layout_width="@dimen/w_500"
+        android:layout_height="@dimen/h_100"
+        android:text="pc1"
+        android:hint="用戶名"/>
+
+    <EditText
+        android:id="@+id/edt_smb_login_password"
+        android:layout_width="@dimen/w_500"
+        android:layout_height="@dimen/h_100"
+        android:text="tsy"
+        android:hint="密碼"
+        android:inputType="textPassword"/>
+
+    <Button
+        android:id="@+id/btn_smb_login_confirm"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="確認"/>
+
+</LinearLayout>

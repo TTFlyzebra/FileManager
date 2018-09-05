@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 标题栏id -->
+
+    <!-- 菜单ID -->
+
+    <!-- 分类显示media文件时，用于显示图片的imageview所用的tag -->
+    <item name="media_video" type="id"/>
+    <item name="media_audio" type="id"/>
+</resources>

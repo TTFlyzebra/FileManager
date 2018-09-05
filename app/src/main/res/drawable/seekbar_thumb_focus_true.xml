@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <stroke
+                android:width="@dimen/px2"
+                android:color="@color/transparent_white_30"/>
+            <solid android:color="@color/transparent_white_30"/>
+        </shape>
+    </item>
+    <item android:drawable="@drawable/seekbar_thumb_focus_false"/>
+</layer-list>

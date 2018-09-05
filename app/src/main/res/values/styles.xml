@@ -1,0 +1,91 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/white</item>
+
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <style name="MainAttStyle" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="EmptyTheme" parent="AppTheme">
+        <item name="android:windowIsTranslucent">true</item>
+    </style>
+
+    <style name="PalyTheme" parent="Theme.AppCompat">
+        <item name="android:windowBackground">@android:color/black</item>
+        <item name="android:windowNoTitle">true</item>
+    </style>
+
+    <style name="AudioPlayerListDialogStyle" parent="@style/AppTheme">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="MainImageStyle">
+        <item name="android:layout_width">@dimen/px350</item>
+        <item name="android:layout_height">@dimen/px350</item>
+        <item name="android:paddingRight">@dimen/px30</item>
+        <item name="android:paddingBottom">@dimen/px30</item>
+        <item name="android:paddingTop">@dimen/px35</item>
+        <item name="android:paddingLeft">@dimen/px35</item>
+    </style>
+
+    <style name="MainImageTitleStyle">
+        <item name="android:layout_width">@dimen/px350</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:lines">1</item>
+        <item name="android:textAlignment" tools:targetApi="jelly_bean_mr1">center</item>
+        <item name="android:textSize">@dimen/px60</item>
+        <item name="android:state_selected">false</item>
+        <item name="android:textColor">@color/title_text_color</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <style name="PicBtnStyle">
+        <item name="android:layout_width">@dimen/px100</item>
+        <item name="android:layout_height">@dimen/px100</item>
+        <item name="android:focusable">true</item>
+        <item name="android:clickable">true</item>
+    </style>
+
+    <style name="MusicImageBtn">
+        <item name="android:layout_height">@dimen/px150</item>
+        <item name="android:layout_width">@dimen/px150</item>
+        <item name="android:layout_gravity">center_vertical</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:focusable">true</item>
+        <item name="android:background">@drawable/sel_rcyview_item</item>
+    </style>
+
+    <style name="TitleStyle">
+        <item name="android:layout_width">@dimen/px160</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginLeft">@dimen/px172</item>
+        <item name="android:layout_marginTop">@dimen/px80</item>
+        <item name="android:adjustViewBounds">true</item>
+        <item name="android:focusable">false</item>
+    </style>
+
+    <style name="PpfunsDialogStyle" parent="Theme.AppCompat.Dialog.Alert">
+        <item name="android:windowBackground">@color/transparent</item>
+    </style>
+</resources>

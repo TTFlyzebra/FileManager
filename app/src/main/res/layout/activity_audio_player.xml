@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/rl_audioplayer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:focusable="false">
+
+    <ImageView
+        android:layout_width="@dimen/px250"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/px172"
+        android:layout_marginTop="@dimen/px42"
+        android:focusable="false"
+        android:src="@drawable/play_icon"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/px120"
+        android:focusable="false"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingLeft="@dimen/px36"
+        android:paddingRight="@dimen/px36">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingLeft="@dimen/px50"
+            android:paddingRight="@dimen/px50">
+
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/px240"
+                android:layout_marginRight="@dimen/px50">
+
+                <ImageView
+                    android:id="@+id/iv_avatar"
+                    android:layout_width="@dimen/px300"
+                    android:layout_height="@dimen/px300"
+                    android:layout_gravity="center"
+                    android:focusable="false"
+                    android:paddingTop="@dimen/px25"/>
+
+                <ImageView
+                    android:id="@+id/iv_anim"
+                    android:layout_width="@dimen/px480"
+                    android:layout_height="@dimen/px480"
+                    android:layout_gravity="center"
+                    android:focusable="false"/>
+            </FrameLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="@dimen/px35"
+                android:layout_marginTop="@dimen/px50"
+                android:layout_weight="1">
+
+                <com.ppfuns.filemanager.view.LrcView
+                    android:id="@+id/lv_lyric"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerInParent="true"
+                    app:afterLineColor="@color/transparent_white_30"
+                    app:beforeLineColor="@color/transparent_white_30"
+                    app:currentLineColor="@color/transparent_white_70"
+                    app:lineSpacing="1.5"
+                    app:referenceLineColor="@color/transparent_white_70"
+                    app:textSize="24sp"/>
+
+                <TextView
+                    android:id="@+id/tv_no_lyric_tip"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/no_lyric"
+                    android:textColor="@color/transparent_white_30"
+                    android:textSize="24sp"/>
+
+
+                <TextView
+                    android:id="@+id/tv_loading_lyric"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:text="@string/loading_lyric"
+                    android:textColor="@color/transparent_white_30"
+                    android:textSize="24sp"/>
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/px18"
+            android:layout_marginRight="@dimen/px18"
+            android:focusable="false"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_name"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:focusable="false"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px36"/>
+
+            <TextView
+                android:id="@+id/music_duration_played"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:focusable="false"
+                android:gravity="right"
+                android:maxLines="1"
+                android:text="@string/_0_00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px30"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:focusable="false"
+                android:text=" / "
+                android:textColor="@color/white"
+                android:textSize="@dimen/px30"/>
+
+            <TextView
+                android:id="@+id/music_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:focusable="false"
+                android:singleLine="true"
+                android:text="@string/_0_00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/px30"/>
+        </LinearLayout>
+
+        <com.ppfuns.filemanager.view.PpfunSeekbar
+            android:id="@+id/play_seek"
+            style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:focusable="true"
+            android:indeterminate="false"
+            android:paddingLeft="@dimen/px24"
+            android:paddingRight="@dimen/px24"
+            android:progress="0"
+            android:progressDrawable="@drawable/bg_seek_bar_music"
+            android:thumb="@drawable/drawable_seekbar_thumb"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:focusable="false"
+            android:orientation="horizontal"
+            android:padding="@dimen/px20">
+
+            <ImageView
+                android:id="@+id/playing_mode"
+                style="@style/MusicImageBtn"
+                android:src="@drawable/singleloop"/>
+
+            <ImageView
+                android:id="@+id/playing_pre"
+                style="@style/MusicImageBtn"
+                android:src="@drawable/play_btn_prev"/>
+
+            <ImageView
+                android:id="@+id/playing_play"
+                style="@style/MusicImageBtn"
+                android:layout_weight="1.2"
+                android:src="@drawable/play_btn_play">
+
+                <requestFocus/>
+            </ImageView>
+
+            <ImageView
+                android:id="@+id/playing_next"
+                style="@style/MusicImageBtn"
+                android:src="@drawable/play_btn_next"/>
+
+            <ImageView
+                android:id="@+id/playing_list"
+                style="@style/MusicImageBtn"
+                android:src="@drawable/play_icn_src_prs"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</RelativeLayout>

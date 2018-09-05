@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="false"
+    tools:context=".ui.activity.MainActivity">
+
+
+    <include layout="@layout/tip_lay"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/px190"
+        android:paddingLeft="@dimen/px100"
+        android:paddingRight="@dimen/px100">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_main_video"
+                style="@style/MainImageStyle"
+                android:focusable="true"
+                android:src="@drawable/video1"/>
+
+            <TextView
+                android:id="@+id/tv_mian_video"
+                style="@style/MainImageTitleStyle"
+                android:text="@string/video"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_main_audio"
+                style="@style/MainImageStyle"
+                android:focusable="true"
+                android:src="@drawable/music1"/>
+
+            <TextView
+                android:id="@+id/tv_main_audio"
+                style="@style/MainImageTitleStyle"
+                android:text="@string/audio"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_main_image"
+                style="@style/MainImageStyle"
+                android:focusable="true"
+                android:src="@drawable/pic1"/>
+
+            <TextView
+                android:id="@+id/tv_main_image"
+                style="@style/MainImageTitleStyle"
+                android:text="@string/picture"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/iv_main_device"
+                style="@style/MainImageStyle"
+                android:focusable="true"
+                android:src="@drawable/all1"/>
+
+            <TextView
+                android:id="@+id/tv_main_device"
+                style="@style/MainImageTitleStyle"
+                android:text="@string/file_tree"/>
+        </LinearLayout>
+    </LinearLayout>
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/px308"
+        android:src="@drawable/bar_main"
+        android:visibility="gone"/>
+
+    <FrameLayout
+        android:id="@+id/fl_focused_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/focus1"
+        android:visibility="invisible"/>
+
+</RelativeLayout>

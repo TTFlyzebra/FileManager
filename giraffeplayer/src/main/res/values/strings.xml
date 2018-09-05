@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">GiraffePlayer</string>
+    <string name="giraffe_player_url_empty">Please specify the address of the video playback</string>
+    <string name="error_tip">视频文件出錯</string>
+    <string name="default_time">--:--</string>
+    <string name="time_dev">  /  </string>
+    <string name="play_done">播放结束</string>
+</resources>

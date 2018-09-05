@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/app_video_control_panel"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="@dimen/px60"
+    android:layout_marginLeft="@dimen/px120"
+    android:layout_marginRight="@dimen/px120"
+    android:background="@drawable/video_player_control_panel_bg"
+    android:visibility="visible">
+
+
+    <ImageView
+        android:id="@+id/app_video_play"
+        android:layout_width="@dimen/px160"
+        android:layout_height="@dimen/px160"
+        android:layout_centerVertical="true"
+        android:src="@drawable/play_video"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="@dimen/px24"
+        android:layout_toRightOf="@id/app_video_play"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/app_video_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/px24"
+            android:ellipsize="end"
+            android:lines="1"
+            android:text="@string/app_name"
+            android:textColor="@android:color/white"
+            android:textSize="32sp"
+            android:visibility="visible"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/app_video_currentTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_time"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+
+            <tcking.github.com.giraffeplayer.MySeekBar
+                android:id="@+id/app_video_seekBar"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:maxHeight="@dimen/px13"
+                android:layout_marginLeft="@dimen/px24"
+                android:layout_marginRight="@dimen/px24"
+                android:progressDrawable="@drawable/bg_seek_bar"
+                android:thumb="@drawable/ic_seekbar_thumb"/>
+
+            <TextView
+                android:id="@+id/app_video_endTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/default_time"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/selector_audio_item_bg"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="20dp">
+
+    <ImageView
+        android:id="@+id/iv_photo"
+        android:layout_width="@dimen/px150"
+        android:layout_height="@dimen/px150"
+        android:layout_marginRight="20dp"
+        android:adjustViewBounds="true"
+        android:focusable="false"
+        android:src="@mipmap/ic_launcher"/>
+
+
+    <TextView
+        android:id="@+id/tv_duration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/iv_photo"
+        android:layout_marginBottom="@dimen/px24"
+        android:layout_toRightOf="@id/iv_photo"
+        android:alpha="0.5"
+        android:text="@string/_0_00"
+        android:textColor="@color/white"
+        android:textSize="18sp"/>
+
+    <com.ppfuns.filemanager.view.MarqueeTextView
+        android:id="@+id/tv_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/tv_duration"
+        android:layout_toRightOf="@id/iv_photo"
+        android:ellipsize="marquee"
+        android:focusable="false"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:singleLine="true"
+        android:text="@string/app_name"
+        android:textColor="@color/white"
+        android:textSize="24sp"/>
+</RelativeLayout>
